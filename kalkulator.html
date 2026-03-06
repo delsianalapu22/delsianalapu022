@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Sederhana</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            width: 200px;
+            height: 40px;
+            font-size: 20px;
+            text-align: right;
+        }
+        button {
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Kalkulator Sederhana</h2>
+
+<input type="text" id="layar" disabled>
+<br><br>
+
+<button onclick="tambah('7')">7</button>
+<button onclick="tambah('8')">8</button>
+<button onclick="tambah('9')">9</button>
+<button onclick="tambah('/')">/</button>
+<br>
+
+<button onclick="tambah('4')">4</button>
+<button onclick="tambah('5')">5</button>
+<button onclick="tambah('6')">6</button>
+<button onclick="tambah('*')">*</button>
+<br>
+
+<button onclick="tambah('1')">1</button>
+<button onclick="tambah('2')">2</button>
+<button onclick="tambah('3')">3</button>
+<button onclick="tambah('-')">-</button>
+<br>
+
+<button onclick="tambah('0')">0</button>
+<button onclick="hapus()">C</button>
+<button onclick="hitung()">=</button>
+<button onclick="tambah('+')">+</button>
+
+<script>
+function tambah(nilai) {
+    document.getElementById("layar").value += nilai;
+}
+
+function hapus() {
+    document.getElementById("layar").value = "";
+}
+
+function hitung() {
+    let hasil = eval(document.getElementById("layar").value);
+    document.getElementById("layar").value = hasil;
+}
+</script>
+
+</body>
+</html>
